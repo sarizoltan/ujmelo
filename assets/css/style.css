@@ -242,14 +242,14 @@ a:hover { color: var(--accent-dark); }
 
 /* ── ELŐTTE-UTÁNA ÖSSZEHASONLÍTÓ ── */
 .comparison-grid { max-width: 760px; margin: 0 auto; }
-.image-comparison { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); user-select: none; touch-action: none; }
+.image-comparison { --comparison-start: 50%; position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); user-select: none; touch-action: none; }
 .image-comparison img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .comparison-before, .comparison-after { position: absolute; inset: 0; }
-.comparison-after { width: 50%; overflow: hidden; border-right: 1px solid rgba(255,255,255,.65); }
+.comparison-after { width: var(--comparison-start); overflow: hidden; border-right: 1px solid rgba(255,255,255,.65); }
 .comparison-label { position: absolute; top: 16px; padding: 6px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; background: rgba(31,31,46,.76); color: var(--white); z-index: 2; }
 .comparison-label.before { left: 16px; }
 .comparison-label.after { right: 16px; }
-.comparison-handle { position: absolute; top: 0; left: 50%; width: 44px; height: 100%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; cursor: ew-resize; z-index: 3; }
+.comparison-handle { position: absolute; top: 0; left: var(--comparison-start); width: 44px; height: 100%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; cursor: ew-resize; z-index: 3; }
 .comparison-line { position: absolute; width: 2px; height: 100%; background: var(--white); box-shadow: 0 0 0 1px rgba(31,31,46,.12); }
 .comparison-knob { position: relative; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: var(--white); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(230,77,132,.32); font-size: 14px; }
 @media(max-width:768px) { .comparison-label { font-size: 10px; padding: 5px 8px; } .comparison-knob { width: 40px; height: 40px; } }

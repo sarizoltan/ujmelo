@@ -1,4 +1,6 @@
 (function () {
+    const DEFAULT_START = 50;
+
     class ImageComparison {
         constructor(container) {
             this.container = container;
@@ -9,8 +11,8 @@
 
             if (!this.after || !this.handle) return;
 
-            const start = parseFloat(container.dataset.start || '50');
-            this.setPosition(Number.isFinite(start) ? start : 50);
+            const start = parseFloat(container.dataset.start || String(DEFAULT_START));
+            this.setPosition(Number.isFinite(start) ? start : DEFAULT_START);
             this.bindEvents();
         }
 
@@ -50,21 +52,23 @@
             window.addEventListener('pointerup', endDrag);
             window.addEventListener('pointercancel', endDrag);
 
-            this.container.addEventListener('touchstart', (event) => {
-                event.preventDefault();
-                this.dragging = true;
-                this.updateFromEvent(event.touches[0]);
-            }, { passive: false });
+            if (!window.PointerEvent) {
+                this.container.addEventListener('touchstart', (event) => {
+                    event.preventDefault();
+                    this.dragging = true;
+                    this.updateFromEvent(event.touches[0]);
+                }, { passive: false });
 
-            this.container.addEventListener('touchmove', (event) => {
-                if (!this.dragging || !event.touches[0]) return;
-                event.preventDefault();
-                this.updateFromEvent(event.touches[0]);
-            }, { passive: false });
+                this.container.addEventListener('touchmove', (event) => {
+                    if (!this.dragging || !event.touches[0]) return;
+                    event.preventDefault();
+                    this.updateFromEvent(event.touches[0]);
+                }, { passive: false });
 
-            this.container.addEventListener('touchend', () => {
-                this.dragging = false;
-            });
+                this.container.addEventListener('touchend', () => {
+                    this.dragging = false;
+                });
+            }
 
             this.handle.addEventListener('keydown', (event) => {
                 const current = parseFloat(this.handle.getAttribute('aria-valuenow') || '50');

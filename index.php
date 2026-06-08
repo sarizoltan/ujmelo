@@ -175,11 +175,11 @@ require_once 'templates/header.php';
         <div class="comparison-grid reveal">
             <div class="image-comparison" data-start="50">
                 <div class="comparison-before">
-                    <img src="<?= BASE_URL ?>/assets/images/hero-bg.jpg" alt="Arcbőr arckezelés előtt">
+                    <img src="<?= BASE_URL ?>/assets/images/hero-bg.jpg" alt="Arcbőr kezelés előtt">
                     <span class="comparison-label before">Előtte</span>
                 </div>
                 <div class="comparison-after">
-                    <img src="<?= BASE_URL ?>/assets/images/cta-bg.jpg" alt="Arcbőr arckezelés után">
+                    <img src="<?= BASE_URL ?>/assets/images/cta-bg.jpg" alt="Arcbőr kezelés után">
                     <span class="comparison-label after">Utána</span>
                 </div>
                 <div class="comparison-handle" role="slider" aria-label="Előtte-utána csúszka" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">

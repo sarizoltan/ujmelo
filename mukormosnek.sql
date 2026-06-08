@@ -181,9 +181,9 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `slug`, `content`, `meta_title`, `meta_description`, `schema_type`, `status`, `sort_order`, `created_at`, `updated_at`) VALUES
-(1, 'Főoldal', 'fooldal', '<h1>Üdvözlünk a Kozmetikus Szalonban!</h1><p>Foglalj időpontot online, gyorsan és egyszerűen.</p>', 'Kozmetikus Szalon – Ragyogó arckezelések', 'Luxus kozmetikus szalon Budapest szívében. Foglalj időpontot online!', 'LocalBusiness', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
-(2, 'Rólunk', 'rolunk', '<h2>Rólunk</h2><p>Több mint 10 éve nyújtunk prémium kozmetikus kezeléseket.</p>', 'Rólunk – Kozmetikus Szalon', 'Ismerj meg minket! Tapasztalt kozmetikuseink várnak.', 'AboutPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
-(3, 'Kapcsolat', 'kapcsolat', '<h2>Kapcsolat</h2><p>Vedd fel velünk a kapcsolatot!</p>', 'Kapcsolat – Kozmetikus Szalon', 'Kapcsolatfelvétel a Kozmetikus Szalonnal.', 'ContactPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
+(1, 'Főoldal', 'fooldal', '<h1>Üdvözlünk a Kozmetikai Szalonban!</h1><p>Foglalj időpontot online, gyorsan és egyszerűen.</p>', 'Kozmetikai Szalon – Ragyogó arckezelések', 'Luxus kozmetikai szalon Budapest szívében. Foglalj időpontot online!', 'LocalBusiness', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
+(2, 'Rólunk', 'rolunk', '<h2>Rólunk</h2><p>Több mint 10 éve nyújtunk prémium kozmetikai kezeléseket.</p>', 'Rólunk – Kozmetikai Szalon', 'Ismerj meg minket! Tapasztalt kozmetikusaink várnak.', 'AboutPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
+(3, 'Kapcsolat', 'kapcsolat', '<h2>Kapcsolat</h2><p>Vedd fel velünk a kapcsolatot!</p>', 'Kapcsolat – Kozmetikai Szalon', 'Kapcsolatfelvétel a Kozmetikai Szalonnal.', 'ContactPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
 (4, 'Kezelések', 'kezelesek', '<p>[services]</p>\r\n<h1 style=\"text-align: center;\">Kozmetikusaink</h1>\r\n<p>[staff]</p>\r\n<p>&nbsp;</p>', '', '', 'ServicePage', 'published', 0, '2026-04-08 13:50:25', '2026-04-08 16:42:03'),
 (5, 'Kozmetikusaink', 'mukormoseink', '<p>[staff]</p>', '', '', 'WebPage', 'published', 0, '2026-04-08 16:46:29', '2026-04-08 16:46:29');
 
@@ -236,7 +236,7 @@ CREATE TABLE `post_categories` (
 --
 
 INSERT INTO `post_categories` (`id`, `name`, `slug`, `description`, `sort_order`) VALUES
-(1, 'Manikűr', 'manikur', NULL, 1),
+(1, 'Arckezelés', 'arckezeles', NULL, 1),
 (2, 'Hydra kezelés', 'gellakk', NULL, 2),
 (3, 'Tippek', 'tippek', NULL, 3),
 (4, 'Hírek', 'hirek', NULL, 4);
@@ -347,9 +347,9 @@ CREATE TABLE `services` (
 
 INSERT INTO `services` (`id`, `name`, `description`, `duration`, `price`, `category`, `sort_order`, `active`) VALUES
 (1, 'Expressz arctisztítás', 'Gyors, frissítő arctisztítás ragyogó bőrért.', 30, 6500.00, 'Arckezelés', 1, 1),
-(2, 'Hydra kezelés klasszikus', 'Mélyhidratáló kezelés az üde, sima arcbőrért.', 45, 8900.00, 'Arckezelés', 2, 1),
+(2, 'Hydra arckezelés', 'Mélyhidratáló kezelés az üde, sima arcbőrért.', 45, 8900.00, 'Bőrfiatalítás', 2, 1),
 (3, 'Bőrfiatalító kezelés', 'Célzott anti-age kezelés feszesebb, üdébb bőrért.', 55, 9900.00, 'Bőrfiatalítás', 3, 1),
-(4, 'Szemöldök formázás', 'Precíz szemöldökigazítás és festés harmonikus archoz.', 45, 7900.00, 'Szemöldök', 4, 1),
+(4, 'Szemöldök formázás', 'Precíz szemöldökigazítás és festés harmonikus archoz.', 90, 14900.00, 'Szemöldök', 4, 1),
 (5, 'Professzionális smink', 'Alkalmi vagy nappali smink személyre szabottan.', 30, 8500.00, 'Smink', 5, 1),
 (6, 'Luxus arckezelés', 'Prémium bőrápoló rituálé masszázzsal és hidratáló pakolással.', 60, 11900.00, 'Prémium', 6, 1);
 
@@ -401,7 +401,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('feature2_text', 'Foglalj pár kattintással kezelést és kozmetikust, amikor neked a legkényelmesebb.'),
 ('feature2_title', 'Online foglalás'),
 ('feature3_icon', 'fas fa-gem'),
-('feature3_text', 'Minőségi hidra kezelésokkal és professzionális anyagokkal gondoskodunk körmeid szépségéről.'),
+('feature3_text', 'Minőségi kezelésekkel és professzionális anyagokkal gondoskodunk bőröd szépségéről.'),
 ('feature3_title', 'Luxus alapanyagok'),
 ('feature4_icon', 'fas fa-wand-magic-sparkles'),
 ('feature4_text', 'Minden szettet a személyiségedhez és alkalmaidhoz igazítunk.'),
@@ -409,29 +409,29 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('features_label', 'Miért minket válassz'),
 ('features_show', '1'),
 ('features_title', 'A különbség amit érezni fogsz'),
-('footer_text', '© 2026 Kozmetikus Szalon. Minden jog fenntartva.'),
+('footer_text', '© 2026 Kozmetikai Szalon. Minden jog fenntartva.'),
 ('google_maps_embed', ''),
 ('hero_bg_image', 'hero_bg_image_1780920758.jpg'),
 ('hero_btn1_text', 'Időpontfoglalás'),
 ('hero_btn1_url', '/foglalas'),
 ('hero_btn2_text', 'Kezelések'),
 ('hero_btn2_url', '#services'),
-('hero_label', 'Luxus Kozmetikus Szalon'),
+('hero_label', 'Kozmetikai Szalon'),
 ('hero_stat1_label', 'Év tapasztalat'),
 ('hero_stat1_num', '10+'),
 ('hero_stat2_label', 'Kozmetikus'),
 ('hero_stat3_label', 'Elégedett ügyfél'),
 ('hero_stat3_num', '500+'),
-('hero_subtitle', 'Tapasztalt kozmetikuseink gondoskodnak róla, hogy kezeid mindig ápoltak és elegánsak legyenek.'),
+('hero_subtitle', 'Tapasztalt kozmetikusaink gondoskodnak róla, hogy bőröd mindig ápolt és ragyogó legyen.'),
 ('hero_title_line1', 'Ragyogó arckezelések'),
-('hero_title_line2', 'a kezeid ékszere.'),
+('hero_title_line2', 'természetes szépség minden nap.'),
 ('instagram_url', ''),
 ('map_type', 'openstreet'),
-('meta_description', 'Prémium kozmetikus szalon időpontfoglalás online.'),
+('meta_description', 'Prémium kozmetikai szalon időpontfoglalás online.'),
 ('osm_height', '400'),
 ('osm_lat', '47.499461'),
 ('osm_lng', '19.055271'),
-('osm_marker_label', 'Kozmetikus Szalon'),
+('osm_marker_label', 'Kozmetikai Szalon'),
 ('osm_zoom', '16'),
 ('services_label', 'Kiemelt kezelések'),
 ('services_limit', '6'),
@@ -442,9 +442,9 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('site_email', 'hello@kozmetika.hu'),
 ('site_favicon', ''),
 ('site_logo', ''),
-('site_name', 'Kozmetikus Szalon'),
+('site_name', 'Kozmetikai Szalon'),
 ('site_phone', '+36 1 234 5678'),
-('site_tagline', 'Ragyogó arckezelések, hidra kezelés és műbőr kezelések');
+('site_tagline', 'Ragyogó arckezelések, hydra kezelés és bőrápoló kezelések');
 
 -- --------------------------------------------------------
 
@@ -470,7 +470,7 @@ CREATE TABLE `staff` (
 
 INSERT INTO `staff` (`id`, `name`, `bio`, `photo`, `email`, `phone`, `sort_order`, `active`, `created_at`) VALUES
 (1, 'Kiss Anna', 'Precíz arckezelés és modern hidra kezelés technikák szakértője.', 'staff_1780924743_6a26c147ade31.jpg', 'anna@kozmetika.hu', '', 1, 1, '2026-04-08 11:31:19'),
-(2, 'Nagy Viktória', 'Elegáns épített műbőr és francia stílus mestere.', 'staff_1780924750_6a26c14e7697a.jpg', 'viktoria@kozmetika.hu', '', 2, 1, '2026-04-08 11:31:19'),
+(2, 'Nagy Viktória', 'Elegáns szemöldökformázás és bőrfiatalító kezelések szakértője.', 'staff_1780924750_6a26c14e7697a.jpg', 'viktoria@kozmetika.hu', '', 2, 1, '2026-04-08 11:31:19'),
 (3, 'Tóth Réka', 'Kreatív nail art díszítések specialistája.', 'staff_1780924757_6a26c155ce573.jpg', 'reka@kozmetika.hu', '', 3, 1, '2026-04-08 11:31:19');
 
 -- --------------------------------------------------------
