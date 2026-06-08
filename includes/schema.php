@@ -1,7 +1,7 @@
 <?php
 
 function schema_local_business(): string {
-    $name    = get_setting('site_name',    'Műkörmös Szalon');
+    $name    = get_setting('site_name',    'Kozmetikai Szalon');
     $address = get_setting('site_address', '');
     $phone   = get_setting('site_phone',   '');
     $email   = get_setting('site_email',   '');

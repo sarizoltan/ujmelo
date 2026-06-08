@@ -11,7 +11,7 @@ $days_hu = ['Hétfő','Kedd','Szerda','Csütörtök','Péntek','Szombat','Vasár
 $today = (date('N') - 1); // PHP N: 1=Hétfő, 7=Vasárnap → 0-6
 
 // Beállítások
-$site_name    = get_setting('site_name', 'Műkörmös Szalon');
+$site_name    = get_setting('site_name', 'Kozmetikus Szalon');
 $site_address = get_setting('site_address', '');
 $site_phone   = get_setting('site_phone', '');
 $site_email   = get_setting('site_email', '');

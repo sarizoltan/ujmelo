@@ -111,7 +111,7 @@ require_once 'partials/header.php';
                 <th>Kategória</th>
                 <th>Időtartam</th>
                 <th>Ár</th>
-                <th>Műkörmösök</th>
+                <th>Kozmetikusok</th>
                 <th>Sorrend</th>
                 <th>Státusz</th>
                 <th>Műveletek</th>
@@ -131,7 +131,7 @@ require_once 'partials/header.php';
                 <td><span class="category-tag"><?= e($s['category']) ?></span></td>
                 <td><i class="fas fa-clock" style="color:#999;"></i> <?= $s['duration'] ?> perc</td>
                 <td><strong><?= number_format($s['price'],0,',',' ') ?> Ft</strong></td>
-                <td><?= $s['staff_count'] ?> műkörmös</td>
+                <td><?= $s['staff_count'] ?> kozmetikus</td>
                 <td><?= $s['sort_order'] ?></td>
                 <td>
                     <a href="services.php?toggle=<?= $s['id'] ?>&csrf_token=<?= csrf_token() ?>"

@@ -228,8 +228,8 @@ require_once 'partials/header.php';
             <div class="settings-info-box">
                 <i class="fas fa-info-circle"></i>
                 <div>
-                    <strong>Megjegyzés:</strong> Az egyéni műkörmös munkaidőt a
-                    <a href="staff.php">Műkörmösök</a> menüpontban lehet beállítani.
+                    <strong>Megjegyzés:</strong> Az egyéni kozmetikus munkaidőt a
+                    <a href="staff.php">Kozmetikusok</a> menüpontban lehet beállítani.
                     Az itt megadott értékek csak alapértelmezettként szolgálnak.
                 </div>
             </div>

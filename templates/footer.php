@@ -102,6 +102,7 @@ $maps_embed   = get_setting('google_maps_embed', '');
     </div>
 </footer>
 
+<script src="<?= BASE_URL ?>/assets/js/image-comparison.js"></script>
 <script src="<?= BASE_URL ?>/assets/js/main.js"></script>
 <?php if (isset($extra_js)) echo $extra_js; ?>
 </body>

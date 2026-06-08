@@ -214,7 +214,7 @@ require_once 'partials/header.php';
             </div>
 
             <div class="msg-view-actions">
-                <a href="mailto:<?= e($open_msg['email']) ?>?subject=Re: Műkörmös Szalon üzenet"
+                <a href="mailto:<?= e($open_msg['email']) ?>?subject=Re: Kozmetikus Szalon üzenet"
                    class="btn btn-primary"
                    onclick="markReplied(<?= $open_msg['id'] ?>)">
                     <i class="fas fa-reply"></i> Válasz emailben

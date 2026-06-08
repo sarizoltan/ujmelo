@@ -4,7 +4,7 @@ require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/schema.php';
 
 // Beállítások
-$site_name    = get_setting('site_name', 'Műkörmös Szalon');
+$site_name    = get_setting('site_name', 'Kozmetikai Szalon');
 $site_phone   = get_setting('site_phone', '');
 $site_email   = get_setting('site_email', '');
 $site_address = get_setting('site_address', '');
