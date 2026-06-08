@@ -32,7 +32,7 @@ $pdo->prepare("INSERT INTO contact_messages (name, email, phone, message, status
     ->execute([$name, $email, $phone, $message]);
 
 // ── EMAIL AZ ADMINNAK ──
-$site_name   = get_setting('site_name',  'Műkörmös Szalon');
+$site_name   = get_setting('site_name',  'Kozmetikai Szalon');
 $admin_email = get_setting('site_email', '');
 
 if ($admin_email) {

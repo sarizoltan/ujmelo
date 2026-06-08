@@ -1,5 +1,5 @@
 // ============================================
-// BARBER SHOP – Frontend JavaScript
+// KOZMETIKAI SZALON – Frontend JavaScript
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -43,6 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, { threshold: 0.12 });
         revealEls.forEach(el => observer.observe(el));
+    }
+
+    // ── Előtte-utána képes összehasonlító ──
+    if (typeof window.initImageComparison === 'function') {
+        window.initImageComparison();
     }
 
     // ── Smooth scroll belső linkekhez ──

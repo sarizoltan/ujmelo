@@ -1,14 +1,14 @@
 <?php
 define('DB_HOST',    'mysql.omega');
 define('DB_PORT',    '3306');
-define('DB_NAME',    'mukormosnek');
-define('DB_USER',    'mukormosnek');
-define('DB_PASS',    'Mukormosnek1230');
+define('DB_NAME',    'kozmetikusnak');
+define('DB_USER',    'kozmetikusnak');
+define('DB_PASS',    'Kozmetikusnak1230');
 define('DB_CHARSET', 'utf8mb4');
 
-define('BASE_URL',    'https://demo3.foglalasi-rendszer.hu');
+define('BASE_URL',    'https://demo4.foglalasi-rendszer.hu');
 define('BASE_PATH',   dirname(__FILE__));  // ← EZT IS!
-define('UPLOAD_PATH', '/var/www/customers/vh-89415/web/home/demo3/assets/uploads/');
+define('UPLOAD_PATH', '/var/www/customers/vh-89415/web/home/demo4/assets/uploads/');
 define('UPLOAD_URL',  BASE_URL . '/assets/uploads/');
 define('ADMIN_URL',   BASE_URL . '/admin');
 define('SYSTEM_URL',  BASE_URL . '/rendszer/');

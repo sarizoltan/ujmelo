@@ -10,7 +10,7 @@ $page_schema     = schema_local_business();
 // Aktív szolgáltatások
 $services = $pdo->query("SELECT * FROM services WHERE active=1 ORDER BY sort_order ASC LIMIT 6")->fetchAll();
 
-// Aktív műkörmösök
+// Aktív kozmetikusok
 $staff = $pdo->query("SELECT * FROM staff WHERE active=1 ORDER BY sort_order ASC LIMIT 4")->fetchAll();
 
 // Legutóbbi blog bejegyzések
@@ -33,10 +33,10 @@ require_once 'templates/header.php';
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="hero-content">
-            <div class="hero-label"><?= e(get_setting('hero_label','Luxus Műkörmös Szalon')) ?></div>
+            <div class="hero-label"><?= e(get_setting('hero_label','Kozmetikai Szalon')) ?></div>
             <h1 class="hero-title">
-                <?= e(get_setting('hero_title_line1','Luxus manikűr')) ?>
-                <span><?= e(get_setting('hero_title_line2','a kezeid ékszere.')) ?></span>
+                <?= e(get_setting('hero_title_line1','Ragyogó arckezelések')) ?>
+                <span><?= e(get_setting('hero_title_line2','természetes szépség minden nap.')) ?></span>
             </h1>
             <p class="hero-subtitle"><?= e(get_setting('hero_subtitle','')) ?></p>
             <div class="hero-buttons">
@@ -56,7 +56,7 @@ require_once 'templates/header.php';
                 </div>
                 <div>
                     <span class="hero-stat-number"><?= count($staff) ?>+</span>
-                    <span class="hero-stat-label"><?= e(get_setting('hero_stat2_label','Műkörmös')) ?></span>
+                    <span class="hero-stat-label"><?= e(get_setting('hero_stat2_label','Kozmetikus')) ?></span>
                 </div>
                 <div>
                     <span class="hero-stat-number"><?= e(get_setting('hero_stat3_num','500+')) ?></span>
@@ -87,12 +87,12 @@ require_once 'templates/header.php';
 
         <?php
         $service_icons = [
-            'Manikűr'       => 'fas fa-hand-sparkles',
-            'Géllakk'       => 'fas fa-gem',
-            'Műköröm'       => 'fas fa-palette',
-            'Nail Art'      => 'fas fa-wand-magic-sparkles',
+            'Arckezelés'    => 'fas fa-spa',
+            'Bőrfiatalítás' => 'fas fa-leaf',
+            'Smink'         => 'fas fa-brush',
+            'Szemöldök'     => 'fas fa-eye',
             'Prémium'       => 'fas fa-crown',
-            'default'       => 'fas fa-hand-sparkles',
+            'default'       => 'fas fa-spa',
         ];
         ?>
 
@@ -106,7 +106,7 @@ require_once 'templates/header.php';
                     <i class="<?= $icon ?>"></i>
                 </div>
                 <h3><?= e($svc['name']) ?></h3>
-                <p><?= e($svc['description'] ?: 'Prémium minőségű körömkezelés tapasztalt szakemberektől.') ?></p>
+                <p><?= e($svc['description'] ?: 'Prémium kozmetikai kezelés tapasztalt kozmetikusoktól.') ?></p>
                 <div class="service-meta">
                     <span class="service-price"><?= number_format($svc['price'], 0, ',', ' ') ?> Ft</span>
                     <span class="service-duration">
@@ -141,33 +141,62 @@ require_once 'templates/header.php';
             <div class="feature-item reveal reveal-delay-1">
                 <div class="feature-icon"><i class="fas fa-hand-sparkles"></i></div>
                 <h3>Prémium szakértelem</h3>
-                <p>Műkörmöseink a legújabb technikákkal dolgoznak a tartós és elegáns végeredményért.</p>
+                <p>Kozmetikusaink a legújabb technikákkal dolgoznak a tartós és elegáns végeredményért.</p>
             </div>
             <div class="feature-item reveal reveal-delay-2">
                 <div class="feature-icon"><i class="fas fa-palette"></i></div>
                 <h3>Online foglalás</h3>
-                <p>Foglalj pár kattintással kezelést és műkörmöst, amikor neked a legkényelmesebb.</p>
+                <p>Foglalj pár kattintással kezelést és kozmetikust, amikor neked a legkényelmesebb.</p>
             </div>
             <div class="feature-item reveal reveal-delay-3">
                 <div class="feature-icon"><i class="fas fa-gem"></i></div>
                 <h3>Luxus alapanyagok</h3>
-                <p>Minőségi géllakkokkal és professzionális anyagokkal gondoskodunk körmeid szépségéről.</p>
+                <p>Minőségi hatóanyagokkal és professzionális termékekkel gondoskodunk bőröd szépségéről.</p>
             </div>
             <div class="feature-item reveal reveal-delay-4">
                 <div class="feature-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
                 <h3>Személyre szabott stílus</h3>
-                <p>Minden szettet a személyiségedhez és alkalmaidhoz igazítunk.</p>
+                <p>Minden kezelést a bőröd igényeihez és céljaidhoz igazítunk.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══ MŰKÖRMÖSÖK ══ -->
+
+<!-- ══ ELŐTTE–UTÁNA ══ -->
+<section class="section section-white" id="before-after">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Valódi eredmények</span>
+            <h2 class="section-title">Előtte – <span>Utána</span></h2>
+            <p class="section-subtitle">Nézd meg vendégeink látványos bőrmegújulását professzionális kozmetikai kezeléseinkkel.</p>
+        </div>
+
+        <div class="comparison-grid reveal">
+            <div class="image-comparison" data-start="50">
+                <div class="comparison-before">
+                    <img src="<?= BASE_URL ?>/assets/images/hero-bg.jpg" alt="Előtte">
+                    <span class="comparison-label before">Előtte</span>
+                </div>
+                <div class="comparison-after">
+                    <img src="<?= BASE_URL ?>/assets/images/cta-bg.jpg" alt="Utána">
+                    <span class="comparison-label after">Utána</span>
+                </div>
+                <div class="comparison-handle" role="slider" aria-label="Előtte-utána csúszka" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                    <span class="comparison-line"></span>
+                    <span class="comparison-knob"><i class="fas fa-arrows-left-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ KOZMETIKUSOK ══ -->
 <section class="section section-darker" id="mukormoseink">
     <div class="container">
         <div class="section-header reveal">
-            <span class="section-label">Műkörmöseink</span>
-            <h2 class="section-title">Ismerd meg <span>Műkörmöseinket</span></h2>
+            <span class="section-label">Kozmetikusaink</span>
+            <h2 class="section-title">Ismerd meg <span>Kozmetikusainkat</span></h2>
             <p class="section-subtitle">Kreatív, precíz szakemberek, akik minden alkalomra egyedi megjelenést alkotnak.</p>
             <div class="divider">
                 <div class="divider-line"></div>
@@ -190,7 +219,7 @@ require_once 'templates/header.php';
                 </div>
                 <div class="staff-info">
                     <h3><?= e($s['name']) ?></h3>
-                    <span class="staff-title">Műkörmös</span>
+                    <span class="staff-title">Kozmetikus</span>
                     <?php if ($s['bio']): ?>
                         <p class="staff-bio"><?= e(mb_substr($s['bio'], 0, 100)) ?>...</p>
                     <?php endif; ?>
@@ -211,8 +240,8 @@ require_once 'templates/header.php';
     <div class="container">
         <div class="cta-content reveal">
             <span class="section-label">Ne várj tovább</span>
-            <h2>Kényeztesd magad <span style="color:var(--gold);">még ma!</span></h2>
-            <p>Válassz kezelést és műkörmöst, a többit pedig bízd ránk.</p>
+            <h2>Kényeztesd bőröd <span style="color:var(--accent);">még ma!</span></h2>
+            <p>Válassz kezelést és kozmetikust, a többit pedig bízd ránk.</p>
             <div class="cta-buttons">
                 <a href="<?= BASE_URL ?>/foglalas" class="btn btn-gold btn-lg">
                     <i class="fas fa-calendar-check"></i> Időpontfoglalás
@@ -326,7 +355,7 @@ require_once 'templates/header.php';
                 <!-- Nyitvatartás -->
                 <div style="background:var(--dark-3);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
                     <h3 style="font-family:var(--font-serif);color:var(--white);font-size:20px;margin-bottom:20px;display:flex;align-items:center;gap:10px;">
-                        <i class="fas fa-clock" style="color:var(--gold);"></i> Nyitvatartás
+                        <i class="fas fa-clock" style="color:var(--accent);"></i> Nyitvatartás
                     </h3>
                     <div class="hours-table">
                         <?php foreach ($working_hours as $wh): ?>

@@ -102,7 +102,7 @@ $role_labels = [
 
 $role_permissions = [
     'superadmin' => ['Teljes hozzáférés', 'Felhasználók kezelése', 'Beállítások', 'Minden modul'],
-    'admin'      => ['Foglalások', 'Műkörmösök', 'Szolgáltatások', 'Blog', 'Oldalak', 'Média', 'Üzenetek'],
+    'admin'      => ['Foglalások', 'Kozmetikusok', 'Szolgáltatások', 'Blog', 'Oldalak', 'Média', 'Üzenetek'],
     'editor'     => ['Blog szerkesztés', 'Oldalak szerkesztés', 'Média feltöltés'],
 ];
 
@@ -301,7 +301,7 @@ require_once 'partials/header.php';
 <script>
 const roleDescriptions = {
     superadmin: '⚡ Teljes hozzáférés mindenhez, beleértve a felhasználók és beállítások kezelését.',
-    admin:      '🔧 Foglalások, műkörmösök, szolgáltatások, blog, oldalak, média és üzenetek kezelése.',
+    admin:      '🔧 Foglalások, kozmetikusok, szolgáltatások, blog, oldalak, média és üzenetek kezelése.',
     editor:     '✏️ Csak blog bejegyzések és oldalak szerkesztése, média feltöltés.'
 };
 

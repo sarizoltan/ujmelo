@@ -145,7 +145,7 @@ function is_active_page(string $slug): string {
 
 // ── Email küldés ──
 function send_mail(string $to, string $subject, string $body): bool {
-    $site_name  = get_setting('site_name',       'Műkörmös Szalon');
+    $site_name  = get_setting('site_name',       'Kozmetikai Szalon');
     $from_email = get_setting('smtp_from_email', 'hello@foglalasi-rendszer.hu');
 
     $headers  = "MIME-Version: 1.0\r\n";

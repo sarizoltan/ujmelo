@@ -206,8 +206,8 @@ require_once 'partials/header.php';
                 <?php else: ?>
                 <div class="empty-state">
                     <i class="fas fa-clock"></i>
-                    <p>Nincs nyitvatartási adat. Előbb hozz létre legalább egy műkörmöst!</p>
-                    <a href="staff.php" class="btn btn-secondary">Műkörmösök kezelése</a>
+                    <p>Nincs nyitvatartási adat. Előbb hozz létre legalább egy kozmetikust!</p>
+                    <a href="staff.php" class="btn btn-secondary">Kozmetikusok kezelése</a>
                 </div>
                 <?php endif; ?>
             </div>
@@ -354,8 +354,8 @@ require_once 'partials/header.php';
                 <div class="form-group">
                     <label>Marker felirat</label>
                     <input type="text" name="osm_marker_label"
-                           value="<?= e(cs('osm_marker_label', cs('site_name','Műkörmös Szalon'))) ?>"
-                           placeholder="pl. Műkörmös Szalon">
+                           value="<?= e(cs('osm_marker_label', cs('site_name','Kozmetikus Szalon'))) ?>"
+                           placeholder="pl. Kozmetikus Szalon">
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="previewOSM()">
                     <i class="fas fa-eye"></i> Előnézet frissítése

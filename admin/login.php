@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Belépés – Műkörmös Szalon</title>
+    <title>Admin Belépés – Kozmetikus Szalon</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/admin/assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-box">
         <div class="login-logo">
             <i class="fas fa-cut"></i>
-            <h1>Műkörmös <span>Admin</span></h1>
+            <h1>Kozmetikus <span>Admin</span></h1>
         </div>
 
         <?php if ($error): ?>

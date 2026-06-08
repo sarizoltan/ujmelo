@@ -26,7 +26,7 @@ $notes      = trim($input['notes']          ?? '');
 
 // ── Validálás ──
 $errors = [];
-if (!$staff_id)   $errors[] = 'Műkörmös kiválasztása kötelező.';
+if (!$staff_id)   $errors[] = 'Kozmetikus kiválasztása kötelező.';
 if (!$service_id) $errors[] = 'Kezelés kiválasztása kötelező.';
 if (!$date)       $errors[] = 'Dátum megadása kötelező.';
 if (!$start_time) $errors[] = 'Időpont megadása kötelező.';
@@ -49,12 +49,12 @@ if ($date_obj < new DateTime('today')) {
     exit;
 }
 
-// ── Műkörmös ellenőrzés ──
+// ── Kozmetikus ellenőrzés ──
 $stmt = $pdo->prepare("SELECT * FROM staff WHERE id=? AND active=1");
 $stmt->execute([$staff_id]);
 $staff = $stmt->fetch();
 if (!$staff) {
-    echo json_encode(['success' => false, 'errors' => ['Érvénytelen műkörmös.']]);
+    echo json_encode(['success' => false, 'errors' => ['Érvénytelen kozmetikus.']]);
     exit;
 }
 
@@ -72,7 +72,7 @@ try {
     $ss = $pdo->prepare("SELECT 1 FROM staff_services WHERE staff_id=? AND service_id=?");
     $ss->execute([$staff_id, $service_id]);
     if (!$ss->fetch()) {
-        echo json_encode(['success' => false, 'errors' => ['Ez a műkörmös nem nyújtja ezt a szolgáltatást.']]);
+        echo json_encode(['success' => false, 'errors' => ['Ez a kozmetikus nem nyújtja ezt a szolgáltatást.']]);
         exit;
     }
 } catch (PDOException $e) {
@@ -144,7 +144,7 @@ function send_booking_confirmation(
     string $ref, array $service, array $staff,
     string $date, string $start, string $end
 ): void {
-    $site_name  = get_setting('site_name',   'Műkörmös Szalon');
+    $site_name  = get_setting('site_name',   'Kozmetikai Szalon');
     $site_phone = get_setting('site_phone',  '');
     $site_email = get_setting('site_email',  '');
     $site_addr  = get_setting('site_address','');
@@ -186,7 +186,7 @@ function send_booking_confirmation(
     </div>
     <div class='details'>
       <div class='dr'><span class='dl'>Kezelés</span><span class='dv'>{$service['name']}</span></div>
-      <div class='dr'><span class='dl'>Műkörmös</span><span class='dv'>{$staff['name']}</span></div>
+      <div class='dr'><span class='dl'>Kozmetikus</span><span class='dv'>{$staff['name']}</span></div>
       <div class='dr'><span class='dl'>Dátum</span><span class='dv'>{$date_hu}</span></div>
       <div class='dr'><span class='dl'>Időpont</span><span class='dv'>{$start} – {$end}</span></div>
       <div class='dr'><span class='dl'>Időtartam</span><span class='dv'>{$service['duration']} perc</span></div>
@@ -212,7 +212,7 @@ function send_admin_notification(
     array $service, array $staff,
     string $date, string $start, string $end, string $notes
 ): void {
-    $site_name   = get_setting('site_name',  'Műkörmös Szalon');
+    $site_name   = get_setting('site_name',  'Kozmetikai Szalon');
     $admin_email = get_setting('site_email', '');
     if (!$admin_email) return;
 
@@ -243,7 +243,7 @@ function send_admin_notification(
     <div class='dr'><span class='dl'>Ügyfél neve</span><span class='dv'>{$cust_name}</span></div>
     <div class='dr'><span class='dl'>Email</span><span class='dv'>{$cust_email}</span></div>
     <div class='dr'><span class='dl'>Telefon</span><span class='dv'>" . ($cust_phone ?: '–') . "</span></div>
-    <div class='dr'><span class='dl'>Műkörmös</span><span class='dv'>{$staff['name']}</span></div>
+    <div class='dr'><span class='dl'>Kozmetikus</span><span class='dv'>{$staff['name']}</span></div>
     <div class='dr'><span class='dl'>Kezelés</span><span class='dv'>{$service['name']}</span></div>
     <div class='dr'><span class='dl'>Dátum</span><span class='dv'>{$date_hu}</span></div>
     <div class='dr'><span class='dl'>Időpont</span><span class='dv'>{$start} – {$end}</span></div>

@@ -21,7 +21,7 @@ $message_type = 'success';
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     if (csrf_verify()) {
         $pdo->prepare("DELETE FROM staff WHERE id = ?")->execute([$_GET['delete']]);
-        $message = 'Műkörmös törölve!';
+        $message = 'Kozmetikus törölve!';
     }
 }
 
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_staff'])) {
                 ? [$name, $bio, $email, $phone, $sort, $active, $photo, $id]
                 : [$name, $bio, $email, $phone, $sort, $active, $id];
             $pdo->prepare($sql)->execute($params);
-            $message = ($photo ? 'Műkörmös frissítve + fotó feltöltve!' : 'Műkörmös frissítve!');
+            $message = ($photo ? 'Kozmetikus frissítve + fotó feltöltve!' : 'Kozmetikus frissítve!');
             if ($photo_error) $message .= ' ⚠️ ' . $photo_error;
         } else {
             // Új
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_staff'])) {
             foreach ($default_hours as $h) {
                 $wh_stmt->execute([$id, $h[0], $h[1], $h[2], $h[3]]);
             }
-            $message = ($photo ? 'Műkörmös létrehozva + fotó feltöltve!' : 'Műkörmös létrehozva!');
+            $message = ($photo ? 'Kozmetikus létrehozva + fotó feltöltve!' : 'Kozmetikus létrehozva!');
             if ($photo_error) $message .= ' ⚠️ ' . $photo_error;
         }
 
@@ -203,7 +203,7 @@ if (isset($_GET['hours']) && is_numeric($_GET['hours'])) {
 $staff_list = $pdo->query("SELECT * FROM staff ORDER BY sort_order ASC, name ASC")->fetchAll();
 $all_services = $pdo->query("SELECT * FROM services WHERE active=1 ORDER BY sort_order")->fetchAll();
 
-// Műkörmösök szolgáltatásai
+// Kozmetikusok szolgáltatásai
 $staff_services_map = [];
 $ss_rows = $pdo->query("SELECT * FROM staff_services")->fetchAll();
 foreach ($ss_rows as $row) {
@@ -211,7 +211,7 @@ foreach ($ss_rows as $row) {
 }
 
 $days_hu = ['Hétfő','Kedd','Szerda','Csütörtök','Péntek','Szombat','Vasárnap'];
-$page_title = 'Műkörmösök';
+$page_title = 'Kozmetikusok';
 require_once 'partials/header.php';
 ?>
 
@@ -285,10 +285,10 @@ require_once 'partials/header.php';
 <?php else: ?>
 <!-- ── LISTA + FORM ── -->
 <div class="page-header">
-    <h2><i class="fas fa-user-tie"></i> Műkörmösök kezelése</h2>
+    <h2><i class="fas fa-user-tie"></i> Kozmetikusok kezelése</h2>
     <button class="btn btn-primary" data-modal-open="staffModal"
             onclick="openStaffModal()">
-        <i class="fas fa-plus"></i> Új műkörmös
+        <i class="fas fa-plus"></i> Új kozmetikus
     </button>
 </div>
 
@@ -349,7 +349,7 @@ require_once 'partials/header.php';
                         </button>
                         <a href="staff.php?delete=<?= $s['id'] ?>&csrf_token=<?= csrf_token() ?>"
                            class="action-btn delete" title="Törlés"
-                           data-confirm="Biztosan törölni szeretnéd ezt a műkörmöst? Minden foglalása is törlődik!">
+                           data-confirm="Biztosan törölni szeretnéd ezt a kozmetikust? Minden foglalása is törlődik!">
                             <i class="fas fa-trash"></i>
                         </a>
                     </div>
@@ -357,18 +357,18 @@ require_once 'partials/header.php';
             </tr>
             <?php endforeach; ?>
             <?php else: ?>
-            <tr><td colspan="8" style="text-align:center;padding:40px;color:#999;">Még nincs műkörmös felvéve.</td></tr>
+            <tr><td colspan="8" style="text-align:center;padding:40px;color:#999;">Még nincs kozmetikus felvéve.</td></tr>
             <?php endif; ?>
         </tbody>
     </table>
 </div>
 <?php endif; ?>
 
-<!-- ── MODAL: Műkörmös szerkesztő ── -->
+<!-- ── MODAL: Kozmetikus szerkesztő ── -->
 <div class="modal-overlay" id="staffModal">
     <div class="modal" style="max-width:700px;">
         <div class="modal-header">
-            <h3 id="modalTitle"><i class="fas fa-user-tie"></i> Műkörmös hozzáadása</h3>
+            <h3 id="modalTitle"><i class="fas fa-user-tie"></i> Kozmetikus hozzáadása</h3>
             <button class="modal-close">&times;</button>
         </div>
         <form method="POST" action="staff.php" enctype="multipart/form-data">
@@ -383,7 +383,7 @@ require_once 'partials/header.php';
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-envelope"></i> Email</label>
-                        <input type="email" name="email" id="staffEmail" placeholder="anna@nailsalon.hu">
+                        <input type="email" name="email" id="staffEmail" placeholder="anna@kozmetika.hu">
                     </div>
                 </div>
                 <div class="form-row">
@@ -423,7 +423,7 @@ require_once 'partials/header.php';
                 <div class="form-group">
                     <label class="checkbox-label">
                         <input type="checkbox" name="active" id="staffActive" checked>
-                        <strong>Aktív műkörmös</strong> (látható a foglalási rendszerben)
+                        <strong>Aktív kozmetikus</strong> (látható a foglalási rendszerben)
                     </label>
                 </div>
             </div>
@@ -456,7 +456,7 @@ require_once 'partials/header.php';
 <script>
 function openStaffModal(staff = null, services = []) {
     document.getElementById('modalTitle').innerHTML =
-        staff ? '<i class="fas fa-edit"></i> Műkörmös szerkesztése' : '<i class="fas fa-user-tie"></i> Műkörmös hozzáadása';
+        staff ? '<i class="fas fa-edit"></i> Kozmetikus szerkesztése' : '<i class="fas fa-user-tie"></i> Kozmetikus hozzáadása';
     document.getElementById('staffId').value    = staff ? staff.id : 0;
     document.getElementById('staffName').value  = staff ? staff.name : '';
     document.getElementById('staffEmail').value = staff ? staff.email : '';

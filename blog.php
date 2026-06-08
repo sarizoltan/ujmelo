@@ -3,7 +3,7 @@ require_once 'includes/db.php';
 require_once 'includes/functions.php';
 
 $page_meta_title = 'Blog – ' . get_setting('site_name');
-$page_meta_desc  = 'Olvass műkörmös tippeket, stílus tanácsokat és újdonságokat szalonunktól.';
+$page_meta_desc  = 'Olvass kozmetikus tippeket, stílus tanácsokat és újdonságokat szalonunktól.';
 
 // Lapozás
 $per_page    = 9;

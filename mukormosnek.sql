@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `mukormosnek`
+-- Adatbázis: `kozmetikusnak`
 --
 
 -- --------------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`id`, `booking_ref`, `staff_id`, `service_id`, `customer_name`, `customer_email`, `customer_phone`, `booking_date`, `start_time`, `end_time`, `status`, `notes`, `created_at`) VALUES
-(5, 'BB-20260412-D3EE', 1, 5, 'fegsgds hjgdjgdjg', 'hello@sarizoltan.hu', '0611212112', '2026-04-14', '09:20:00', '09:40:00', 'confirmed', 'Foglalás összegzése\nKezelés\nExpressz manikűr\nMűkörmös\nKiss Anna\nDátum\n2026. április 14., kedd\nIdőpont\n09:20 – 09:40\nIdőtartam\n20 perc', '2026-04-12 08:51:55'),
+(5, 'BB-20260412-D3EE', 1, 5, 'fegsgds hjgdjgdjg', 'hello@sarizoltan.hu', '0611212112', '2026-04-14', '09:20:00', '09:40:00', 'confirmed', 'Foglalás összegzése\nKezelés\nExpressz arckezelés\nKozmetikus\nKiss Anna\nDátum\n2026. április 14., kedd\nIdőpont\n09:20 – 09:40\nIdőtartam\n20 perc', '2026-04-12 08:51:55'),
 (6, 'BB-20260412-1291', 2, 6, 'sfaegshgrsgs', 'hello@sarizoltan.hu', '0611212112', '2026-04-20', '17:00:00', '18:00:00', 'pending', 'bsbs', '2026-04-12 09:03:29'),
 (7, 'BB-20260412-F503', 3, 6, 'Sári Zoltán', 'hello@sarizoltan.hu', '0611212112', '2026-04-28', '13:00:00', '14:00:00', 'confirmed', 'hdrhdjtfjtfh zjsfjfjtf jrzjrsjthdrs', '2026-04-12 09:05:21'),
 (8, 'BB-20260414-36F0', 1, 1, 'Sári Zoltán', 'weboldalajanlatok@gmail.com', '0611212112', '2026-04-16', '11:00:00', '11:30:00', 'pending', 'hdhfd', '2026-04-14 10:09:39'),
@@ -152,7 +152,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `parent_id`, `label`, `url`, `page_id
 (9, 2, 0, 'ÁSZF', '/aszf', NULL, 2, '_self'),
 (16, 1, 0, 'Kapcsolat', '/contact.php', NULL, 17, '_self'),
 (21, 1, 0, 'Időpontfoglalás', '/foglalas', NULL, 18, '_self'),
-(23, 1, 0, 'Műkörmöseink', '/mukormoseink', NULL, 15, '_self'),
+(23, 1, 0, 'Kozmetikusaink', '/mukormoseink', NULL, 15, '_self'),
 (24, 1, 0, 'Kezelések', '/kezelesek', NULL, 14, '_self'),
 (25, 1, 0, 'Rólunk', '/rolunk', NULL, 16, '_self');
 
@@ -181,11 +181,11 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `slug`, `content`, `meta_title`, `meta_description`, `schema_type`, `status`, `sort_order`, `created_at`, `updated_at`) VALUES
-(1, 'Főoldal', 'fooldal', '<h1>Üdvözlünk a Műkörmös Szalonban!</h1><p>Foglalj időpontot online, gyorsan és egyszerűen.</p>', 'Műkörmös Szalon – Luxus manikűr', 'Luxus műkörmös szalon Budapest szívében. Foglalj időpontot online!', 'LocalBusiness', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
-(2, 'Rólunk', 'rolunk', '<h2>Rólunk</h2><p>Több mint 10 éve nyújtunk prémium műkörmös kezeléseket.</p>', 'Rólunk – Műkörmös Szalon', 'Ismerj meg minket! Tapasztalt műkörmöseink várnak.', 'AboutPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
-(3, 'Kapcsolat', 'kapcsolat', '<h2>Kapcsolat</h2><p>Vedd fel velünk a kapcsolatot!</p>', 'Kapcsolat – Műkörmös Szalon', 'Kapcsolatfelvétel a Műkörmös Szalonnal.', 'ContactPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
-(4, 'Kezelések', 'kezelesek', '<p>[services]</p>\r\n<h1 style=\"text-align: center;\">Műkörmöseink</h1>\r\n<p>[staff]</p>\r\n<p>&nbsp;</p>', '', '', 'ServicePage', 'published', 0, '2026-04-08 13:50:25', '2026-04-08 16:42:03'),
-(5, 'Műkörmöseink', 'mukormoseink', '<p>[staff]</p>', '', '', 'WebPage', 'published', 0, '2026-04-08 16:46:29', '2026-04-08 16:46:29');
+(1, 'Főoldal', 'fooldal', '<h1>Üdvözlünk a Kozmetikus Szalonban!</h1><p>Foglalj időpontot online, gyorsan és egyszerűen.</p>', 'Kozmetikus Szalon – Ragyogó arckezelések', 'Luxus kozmetikus szalon Budapest szívében. Foglalj időpontot online!', 'LocalBusiness', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
+(2, 'Rólunk', 'rolunk', '<h2>Rólunk</h2><p>Több mint 10 éve nyújtunk prémium kozmetikus kezeléseket.</p>', 'Rólunk – Kozmetikus Szalon', 'Ismerj meg minket! Tapasztalt kozmetikuseink várnak.', 'AboutPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
+(3, 'Kapcsolat', 'kapcsolat', '<h2>Kapcsolat</h2><p>Vedd fel velünk a kapcsolatot!</p>', 'Kapcsolat – Kozmetikus Szalon', 'Kapcsolatfelvétel a Kozmetikus Szalonnal.', 'ContactPage', 'published', 0, '2026-04-08 11:31:19', '2026-04-08 11:31:19'),
+(4, 'Kezelések', 'kezelesek', '<p>[services]</p>\r\n<h1 style=\"text-align: center;\">Kozmetikusaink</h1>\r\n<p>[staff]</p>\r\n<p>&nbsp;</p>', '', '', 'ServicePage', 'published', 0, '2026-04-08 13:50:25', '2026-04-08 16:42:03'),
+(5, 'Kozmetikusaink', 'mukormoseink', '<p>[staff]</p>', '', '', 'WebPage', 'published', 0, '2026-04-08 16:46:29', '2026-04-08 16:46:29');
 
 -- --------------------------------------------------------
 
@@ -213,8 +213,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `slug`, `excerpt`, `content`, `featured_image`, `author_id`, `meta_title`, `meta_description`, `status`, `published_at`, `created_at`) VALUES
-(1, '2026 körömtrendjei: elegáns nude és finom csillogás', '2026-koromtrendjei-elegans-nude-es-finom-csillogas', 'Mutatjuk az idei szezon legkedveltebb műkörmös színeit és formáit.', '<p>Az idei szezonban a letisztult nude &aacute;rnyalatok, a finom kr&oacute;m effektek &eacute;s a visszafogott d&iacute;sz&iacute;t&eacute;sek h&oacute;d&iacute;tanak.</p>\r\n<p>Ha tart&oacute;s, m&eacute;gis eleg&aacute;ns megjelen&eacute;st szeretn&eacute;l, a r&ouml;videbb mandula forma &eacute;s a p&uacute;deres r&oacute;zsasz&iacute;n t&oacute;nus t&ouml;k&eacute;letes v&aacute;laszt&aacute;s.</p>', 'post_1780920748_6a26b1ac940a1.jpg', 1, '2026 körömtrendjei: elegáns nude és finom csillogás', 'Mutatjuk az idei szezon legkedveltebb műkörmös színeit és formáit.', 'published', '2026-04-08 16:20:43', '2026-04-08 16:20:43'),
-(2, 'Géllakk tartósság 5 lépésben', 'gellakk-tartossag-5-lepesben', 'Így marad makulátlan a géllakkod akár 3-4 hétig.', '<p>A tart&oacute;s g&eacute;llakk titka a megfelelő elők&eacute;sz&iacute;t&eacute;s, a professzion&aacute;lis alapanyag &eacute;s az ut&oacute;&aacute;pol&aacute;s.</p>\r\n<p>Mindig haszn&aacute;lj k&ouml;r&ouml;m&aacute;gyolajat, &eacute;s ker&uuml;ld az erős vegyszereket kesztyű n&eacute;lk&uuml;l.</p>', 'post_1780920740_6a26b1a4aa45b.jpg', 1, 'Géllakk tartósság 5 lépésben', 'Így marad makulátlan a géllakkod akár 3-4 hétig.', 'published', '2026-04-08 16:23:44', '2026-04-08 16:23:44'),
+(1, '2026 bőrtrendjei: elegáns nude és finom csillogás', '2026-koromtrendjei-elegans-nude-es-finom-csillogas', 'Mutatjuk az idei szezon legkedveltebb kozmetikus színeit és formáit.', '<p>Az idei szezonban a letisztult nude &aacute;rnyalatok, a finom kr&oacute;m effektek &eacute;s a visszafogott d&iacute;sz&iacute;t&eacute;sek h&oacute;d&iacute;tanak.</p>\r\n<p>Ha tart&oacute;s, m&eacute;gis eleg&aacute;ns megjelen&eacute;st szeretn&eacute;l, a r&ouml;videbb mandula forma &eacute;s a p&uacute;deres r&oacute;zsasz&iacute;n t&oacute;nus t&ouml;k&eacute;letes v&aacute;laszt&aacute;s.</p>', 'post_1780920748_6a26b1ac940a1.jpg', 1, '2026 bőrtrendjei: elegáns nude és finom csillogás', 'Mutatjuk az idei szezon legkedveltebb kozmetikus színeit és formáit.', 'published', '2026-04-08 16:20:43', '2026-04-08 16:20:43'),
+(2, 'Hydra kezelés tartósság 5 lépésben', 'gellakk-tartossag-5-lepesben', 'Így marad makulátlan a hidra kezelésod akár 3-4 hétig.', '<p>A tart&oacute;s g&eacute;llakk titka a megfelelő elők&eacute;sz&iacute;t&eacute;s, a professzion&aacute;lis alapanyag &eacute;s az ut&oacute;&aacute;pol&aacute;s.</p>\r\n<p>Mindig haszn&aacute;lj k&ouml;r&ouml;m&aacute;gyolajat, &eacute;s ker&uuml;ld az erős vegyszereket kesztyű n&eacute;lk&uuml;l.</p>', 'post_1780920740_6a26b1a4aa45b.jpg', 1, 'Hydra kezelés tartósság 5 lépésben', 'Így marad makulátlan a hidra kezelésod akár 3-4 hétig.', 'published', '2026-04-08 16:23:44', '2026-04-08 16:23:44'),
 (3, 'Mikor válassz épített műkörmöt?', 'mikor-valassz-epitett-mukormot', 'Segítünk eldönteni, mikor ideális az épített technika.', '<p>Az &eacute;p&iacute;tett műk&ouml;r&ouml;m akkor ide&aacute;lis, ha extra tart&oacute;ss&aacute;got vagy hosszabb form&aacute;t szeretn&eacute;l.</p>\r\n<p>Vend&eacute;geinkn&eacute;l k&uuml;l&ouml;n&ouml;sen n&eacute;pszerű alkalmak előtt, hiszen hetekig megőrzi a hib&aacute;tlan megjelen&eacute;st.</p>', 'post_1780920733_6a26b19db1715.jpg', 1, 'Mikor válassz épített műkörmöt?', 'Segítünk eldönteni, mikor ideális az épített technika.', 'published', '2026-04-08 16:26:04', '2026-04-08 16:26:04');
 
 -- --------------------------------------------------------
@@ -237,7 +237,7 @@ CREATE TABLE `post_categories` (
 
 INSERT INTO `post_categories` (`id`, `name`, `slug`, `description`, `sort_order`) VALUES
 (1, 'Manikűr', 'manikur', NULL, 1),
-(2, 'Géllakk', 'gellakk', NULL, 2),
+(2, 'Hydra kezelés', 'gellakk', NULL, 2),
 (3, 'Tippek', 'tippek', NULL, 3),
 (4, 'Hírek', 'hirek', NULL, 4);
 
@@ -280,8 +280,8 @@ CREATE TABLE `post_tags` (
 --
 
 INSERT INTO `post_tags` (`id`, `name`, `slug`) VALUES
-(1, 'manikűr', 'manikur'),
-(2, 'géllakk', 'gellakk'),
+(1, 'arckezelés', 'manikur'),
+(2, 'hidra kezelés', 'gellakk'),
 (3, 'nail-art', 'nail-art'),
 (4, 'ápolás', 'apolas');
 
@@ -346,12 +346,12 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `name`, `description`, `duration`, `price`, `category`, `sort_order`, `active`) VALUES
-(1, 'Expressz manikűr', 'Gyors, ápolt és elegáns manikűr mindennapokra.', 30, 6500.00, 'Manikűr', 1, 1),
-(2, 'Géllakk klasszikus', 'Tartós géllakk fényes, letisztult végeredménnyel.', 45, 8900.00, 'Géllakk', 2, 1),
-(3, 'Francia géllakk', 'Időtálló francia stílus modern kivitelben.', 55, 9900.00, 'Géllakk', 3, 1),
-(4, 'Épített műköröm', 'Tartós épített technika egyedi formára igazítva.', 90, 14900.00, 'Műköröm', 4, 1),
+(1, 'Expressz arckezelés', 'Gyors, ápolt és elegáns arckezelés mindennapokra.', 30, 6500.00, 'Manikűr', 1, 1),
+(2, 'Hydra kezelés klasszikus', 'Tartós hidra kezelés fényes, letisztult végeredménnyel.', 45, 8900.00, 'Hydra kezelés', 2, 1),
+(3, 'Francia hidra kezelés', 'Időtálló francia stílus modern kivitelben.', 55, 9900.00, 'Hydra kezelés', 3, 1),
+(4, 'Épített műbőr', 'Tartós épített technika egyedi formára igazítva.', 90, 14900.00, 'Műbőr', 4, 1),
 (5, 'Nail art díszítés', 'Kézzel festett vagy csillámos díszítések egyedi stílusban.', 30, 4500.00, 'Nail Art', 5, 1),
-(6, 'Luxus spa kézápolás', 'Bőrápoló rituálé manikűrrel és hidratáló pakolással.', 60, 11900.00, 'Prémium', 6, 1);
+(6, 'Luxus spa kézápolás', 'Bőrápoló rituálé arckezelésrel és hidratáló pakolással.', 60, 11900.00, 'Prémium', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -373,7 +373,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('barbers_limit', '4'),
 ('barbers_show', '1'),
 ('barbers_subtitle', 'Kreatív, precíz szakemberek, akik minden alkalomra elegáns körmöket készítenek.'),
-('barbers_title', 'Ismerd meg Műkörmöseinket'),
+('barbers_title', 'Ismerd meg Kozmetikusainkat'),
 ('blog_label', 'Trendek & Tippek'),
 ('blog_limit', '3'),
 ('blog_show', '1'),
@@ -391,17 +391,17 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('cta_btn2_text', 'Hívj minket'),
 ('cta_label', 'Ne várj tovább'),
 ('cta_show', '1'),
-('cta_text', 'Válassz kezelést és műkörmöst, a többit pedig bízd ránk.'),
-('cta_title', 'Foglalj luxus körömkezelést még ma!'),
+('cta_text', 'Válassz kezelést és kozmetikust, a többit pedig bízd ránk.'),
+('cta_title', 'Foglalj luxus bőrkezelést még ma!'),
 ('facebook_url', ''),
 ('feature1_icon', 'fas fa-hand-sparkles'),
-('feature1_text', 'Műkörmöseink a legújabb technikákkal dolgoznak a tartós és elegáns végeredményért.'),
+('feature1_text', 'Kozmetikusaink a legújabb technikákkal dolgoznak a tartós és elegáns végeredményért.'),
 ('feature1_title', 'Prémium szakértelem'),
 ('feature2_icon', 'fas fa-palette'),
-('feature2_text', 'Foglalj pár kattintással kezelést és műkörmöst, amikor neked a legkényelmesebb.'),
+('feature2_text', 'Foglalj pár kattintással kezelést és kozmetikust, amikor neked a legkényelmesebb.'),
 ('feature2_title', 'Online foglalás'),
 ('feature3_icon', 'fas fa-gem'),
-('feature3_text', 'Minőségi géllakkokkal és professzionális anyagokkal gondoskodunk körmeid szépségéről.'),
+('feature3_text', 'Minőségi hidra kezelésokkal és professzionális anyagokkal gondoskodunk körmeid szépségéről.'),
 ('feature3_title', 'Luxus alapanyagok'),
 ('feature4_icon', 'fas fa-wand-magic-sparkles'),
 ('feature4_text', 'Minden szettet a személyiségedhez és alkalmaidhoz igazítunk.'),
@@ -409,29 +409,29 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('features_label', 'Miért minket válassz'),
 ('features_show', '1'),
 ('features_title', 'A különbség amit érezni fogsz'),
-('footer_text', '© 2026 Műkörmös Szalon. Minden jog fenntartva.'),
+('footer_text', '© 2026 Kozmetikus Szalon. Minden jog fenntartva.'),
 ('google_maps_embed', ''),
 ('hero_bg_image', 'hero_bg_image_1780920758.jpg'),
 ('hero_btn1_text', 'Időpontfoglalás'),
 ('hero_btn1_url', '/foglalas'),
 ('hero_btn2_text', 'Kezelések'),
 ('hero_btn2_url', '#services'),
-('hero_label', 'Luxus Műkörmös Szalon'),
+('hero_label', 'Luxus Kozmetikus Szalon'),
 ('hero_stat1_label', 'Év tapasztalat'),
 ('hero_stat1_num', '10+'),
-('hero_stat2_label', 'Műkörmös'),
+('hero_stat2_label', 'Kozmetikus'),
 ('hero_stat3_label', 'Elégedett ügyfél'),
 ('hero_stat3_num', '500+'),
-('hero_subtitle', 'Tapasztalt műkörmöseink gondoskodnak róla, hogy kezeid mindig ápoltak és elegánsak legyenek.'),
-('hero_title_line1', 'Luxus manikűr'),
+('hero_subtitle', 'Tapasztalt kozmetikuseink gondoskodnak róla, hogy kezeid mindig ápoltak és elegánsak legyenek.'),
+('hero_title_line1', 'Ragyogó arckezelések'),
 ('hero_title_line2', 'a kezeid ékszere.'),
 ('instagram_url', ''),
 ('map_type', 'openstreet'),
-('meta_description', 'Prémium műkörmös szalon időpontfoglalás online.'),
+('meta_description', 'Prémium kozmetikus szalon időpontfoglalás online.'),
 ('osm_height', '400'),
 ('osm_lat', '47.499461'),
 ('osm_lng', '19.055271'),
-('osm_marker_label', 'Műkörmös Szalon'),
+('osm_marker_label', 'Kozmetikus Szalon'),
 ('osm_zoom', '16'),
 ('services_label', 'Kiemelt kezelések'),
 ('services_limit', '6'),
@@ -439,12 +439,12 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('services_subtitle', 'Minden kezelésünket prémium anyagokkal és kifinomult technikával végezzük.'),
 ('services_title', 'Elegáns Szalonkezelések'),
 ('site_address', '1061 Budapest, Andrássy út 1.'),
-('site_email', 'hello@nailsalon.hu'),
+('site_email', 'hello@kozmetika.hu'),
 ('site_favicon', ''),
 ('site_logo', ''),
-('site_name', 'Műkörmös Szalon'),
+('site_name', 'Kozmetikus Szalon'),
 ('site_phone', '+36 1 234 5678'),
-('site_tagline', 'Luxus manikűr, géllakk és műköröm kezelések');
+('site_tagline', 'Ragyogó arckezelések, hidra kezelés és műbőr kezelések');
 
 -- --------------------------------------------------------
 
@@ -469,9 +469,9 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`id`, `name`, `bio`, `photo`, `email`, `phone`, `sort_order`, `active`, `created_at`) VALUES
-(1, 'Kiss Anna', 'Precíz manikűr és modern géllakk technikák szakértője.', 'staff_1780924743_6a26c147ade31.jpg', 'anna@nailsalon.hu', '', 1, 1, '2026-04-08 11:31:19'),
-(2, 'Nagy Viktória', 'Elegáns épített műköröm és francia stílus mestere.', 'staff_1780924750_6a26c14e7697a.jpg', 'viktoria@nailsalon.hu', '', 2, 1, '2026-04-08 11:31:19'),
-(3, 'Tóth Réka', 'Kreatív nail art díszítések specialistája.', 'staff_1780924757_6a26c155ce573.jpg', 'reka@nailsalon.hu', '', 3, 1, '2026-04-08 11:31:19');
+(1, 'Kiss Anna', 'Precíz arckezelés és modern hidra kezelés technikák szakértője.', 'staff_1780924743_6a26c147ade31.jpg', 'anna@kozmetika.hu', '', 1, 1, '2026-04-08 11:31:19'),
+(2, 'Nagy Viktória', 'Elegáns épített műbőr és francia stílus mestere.', 'staff_1780924750_6a26c14e7697a.jpg', 'viktoria@kozmetika.hu', '', 2, 1, '2026-04-08 11:31:19'),
+(3, 'Tóth Réka', 'Kreatív nail art díszítések specialistája.', 'staff_1780924757_6a26c155ce573.jpg', 'reka@kozmetika.hu', '', 3, 1, '2026-04-08 11:31:19');
 
 -- --------------------------------------------------------
 
