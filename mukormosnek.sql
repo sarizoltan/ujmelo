@@ -282,7 +282,7 @@ CREATE TABLE `post_tags` (
 INSERT INTO `post_tags` (`id`, `name`, `slug`) VALUES
 (1, 'arckezelés', 'manikur'),
 (2, 'hidra kezelés', 'gellakk'),
-(3, 'nail-art', 'nail-art'),
+(3, 'smink', 'smink'),
 (4, 'ápolás', 'apolas');
 
 -- --------------------------------------------------------
@@ -471,7 +471,7 @@ CREATE TABLE `staff` (
 INSERT INTO `staff` (`id`, `name`, `bio`, `photo`, `email`, `phone`, `sort_order`, `active`, `created_at`) VALUES
 (1, 'Kiss Anna', 'Precíz arckezelés és modern hidra kezelés technikák szakértője.', 'staff_1780924743_6a26c147ade31.jpg', 'anna@kozmetika.hu', '', 1, 1, '2026-04-08 11:31:19'),
 (2, 'Nagy Viktória', 'Elegáns szemöldökformázás és bőrfiatalító kezelések szakértője.', 'staff_1780924750_6a26c14e7697a.jpg', 'viktoria@kozmetika.hu', '', 2, 1, '2026-04-08 11:31:19'),
-(3, 'Tóth Réka', 'Kreatív nail art díszítések specialistája.', 'staff_1780924757_6a26c155ce573.jpg', 'reka@kozmetika.hu', '', 3, 1, '2026-04-08 11:31:19');
+(3, 'Tóth Réka', 'Kreatív smink és egyedi megjelenések specialistája.', 'staff_1780924757_6a26c155ce573.jpg', 'reka@kozmetika.hu', '', 3, 1, '2026-04-08 11:31:19');
 
 -- --------------------------------------------------------
 

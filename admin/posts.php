@@ -306,7 +306,7 @@ require_once 'partials/header.php';
                 <div class="form-group">
                     <input type="text" name="tags_input" id="tagsInput"
                            value="<?= e($post_tags_str) ?>"
-                           placeholder="pl. hajvágás, kozmetikus, tipp">
+                           placeholder="pl. arckezelés, smink, tipp">
                     <small style="color:var(--text-muted);">Vesszővel elválasztva. Új címke automatikusan létrejön.</small>
                 </div>
                 <!-- Meglévő tag-ek gyors hozzáadás -->
