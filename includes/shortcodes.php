@@ -161,7 +161,7 @@ function shortcode_staff(array $matches): string {
     $staff = $stmt->fetchAll();
 
     if (!$staff) {
-        return '<p style="color:var(--text-muted);padding:16px 0;">Nincsenek elérhető kozmetikusök.</p>';
+        return '<p style="color:var(--text-muted);padding:16px 0;">Nincsenek elérhető kozmetikusok.</p>';
     }
 
     ob_start();

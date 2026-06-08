@@ -47,7 +47,7 @@ INSERT INTO `services` (`id`, `name`, `description`, `duration`, `price`, `categ
 (2, 'Hydra arckezelés', 'Mélyhidratáló kezelés az üde, sima arcbőrért.', 45, 8900.00, 'Bőrfiatalítás', 2, 1),
 (3, 'Bőrfiatalító kezelés', 'Célzott anti-age kezelés feszesebb, üdébb bőrért.', 55, 9900.00, 'Bőrfiatalítás', 3, 1),
 (4, 'Szemöldök formázás', 'Precíz szemöldökigazítás és festés harmonikus archoz.', 90, 14900.00, 'Szemöldök', 4, 1),
-(5, 'Nail art díszítés', 'Kézzel festett vagy csillámos díszítések egyedi stílusban.', 30, 4500.00, 'Nail Art', 5, 1),
+(5, 'Professzionális smink', 'Alkalmi vagy nappali smink személyre szabottan.', 30, 8500.00, 'Smink', 5, 1),
 (6, 'Luxus arckezelés', 'Prémium bőrápoló rituálé masszázzsal és hidratáló pakolással.', 60, 11900.00, 'Prémium', 6, 1);
 
 --

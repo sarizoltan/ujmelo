@@ -214,8 +214,8 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`id`, `title`, `slug`, `excerpt`, `content`, `featured_image`, `author_id`, `meta_title`, `meta_description`, `status`, `published_at`, `created_at`) VALUES
 (1, '2026 bőrtrendjei: elegáns nude és finom csillogás', '2026-koromtrendjei-elegans-nude-es-finom-csillogas', 'Mutatjuk az idei szezon legkedveltebb kozmetikus színeit és formáit.', '<p>Az idei szezonban a letisztult nude &aacute;rnyalatok, a finom kr&oacute;m effektek &eacute;s a visszafogott d&iacute;sz&iacute;t&eacute;sek h&oacute;d&iacute;tanak.</p>\r\n<p>Ha tart&oacute;s, m&eacute;gis eleg&aacute;ns megjelen&eacute;st szeretn&eacute;l, a r&ouml;videbb mandula forma &eacute;s a p&uacute;deres r&oacute;zsasz&iacute;n t&oacute;nus t&ouml;k&eacute;letes v&aacute;laszt&aacute;s.</p>', 'post_1780920748_6a26b1ac940a1.jpg', 1, '2026 bőrtrendjei: elegáns nude és finom csillogás', 'Mutatjuk az idei szezon legkedveltebb kozmetikus színeit és formáit.', 'published', '2026-04-08 16:20:43', '2026-04-08 16:20:43'),
-(2, 'Hydra kezelés tartósság 5 lépésben', 'gellakk-tartossag-5-lepesben', 'Így marad makulátlan a hidra kezelésod akár 3-4 hétig.', '<p>A tart&oacute;s g&eacute;llakk titka a megfelelő elők&eacute;sz&iacute;t&eacute;s, a professzion&aacute;lis alapanyag &eacute;s az ut&oacute;&aacute;pol&aacute;s.</p>\r\n<p>Mindig haszn&aacute;lj k&ouml;r&ouml;m&aacute;gyolajat, &eacute;s ker&uuml;ld az erős vegyszereket kesztyű n&eacute;lk&uuml;l.</p>', 'post_1780920740_6a26b1a4aa45b.jpg', 1, 'Hydra kezelés tartósság 5 lépésben', 'Így marad makulátlan a hidra kezelésod akár 3-4 hétig.', 'published', '2026-04-08 16:23:44', '2026-04-08 16:23:44'),
-(3, 'Mikor válassz épített műkörmöt?', 'mikor-valassz-epitett-mukormot', 'Segítünk eldönteni, mikor ideális az épített technika.', '<p>Az &eacute;p&iacute;tett műk&ouml;r&ouml;m akkor ide&aacute;lis, ha extra tart&oacute;ss&aacute;got vagy hosszabb form&aacute;t szeretn&eacute;l.</p>\r\n<p>Vend&eacute;geinkn&eacute;l k&uuml;l&ouml;n&ouml;sen n&eacute;pszerű alkalmak előtt, hiszen hetekig megőrzi a hib&aacute;tlan megjelen&eacute;st.</p>', 'post_1780920733_6a26b19db1715.jpg', 1, 'Mikor válassz épített műkörmöt?', 'Segítünk eldönteni, mikor ideális az épített technika.', 'published', '2026-04-08 16:26:04', '2026-04-08 16:26:04');
+(2, 'Hydra kezelés tartósság 5 lépésben', 'hydra-kezeles-tartossag-5-lepesben', 'Így marad makulátlan a hydra kezelésed akár 3-4 hétig.', '<p>A tart&oacute;s hydra kezel&eacute;s titka a megfelelő elők&eacute;sz&iacute;t&eacute;s, a professzion&aacute;lis alapanyag &eacute;s az ut&oacute;&aacute;pol&aacute;s.</p>\r\n<p>Mindig haszn&aacute;lj hidrat&aacute;l&oacute; sz&eacute;rumot, &eacute;s ker&uuml;ld az erős vegyszereket v&eacute;delem n&eacute;lk&uuml;l.</p>', 'post_1780920740_6a26b1a4aa45b.jpg', 1, 'Hydra kezelés tartósság 5 lépésben', 'Így marad makulátlan a hydra kezelésed akár 3-4 hétig.', 'published', '2026-04-08 16:23:44', '2026-04-08 16:23:44'),
+(3, 'Mikor válassz bőrfiatalító kezelést?', 'mikor-valassz-borfiatalito-kezelest', 'Segítünk eldönteni, mikor ideális egy célzott bőrfiatalító kezelés.', '<p>A bőrfiatal&iacute;t&oacute; kezel&eacute;s akkor ide&aacute;lis, ha feszesebb, egys&eacute;gesebb bőrképet szeretn&eacute;l.</p>\r\n<p>Vend&eacute;geinkn&eacute;l k&uuml;l&ouml;n&ouml;sen n&eacute;pszerű alkalmak előtt, hiszen l&aacute;that&oacute;an jav&iacute;tja az arcbőr megjelen&eacute;s&eacute;t.</p>', 'post_1780920733_6a26b19db1715.jpg', 1, 'Mikor válassz bőrfiatalító kezelést?', 'Segítünk eldönteni, mikor ideális egy célzott bőrfiatalító kezelés.', 'published', '2026-04-08 16:26:04', '2026-04-08 16:26:04');
 
 -- --------------------------------------------------------
 
@@ -346,12 +346,12 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `name`, `description`, `duration`, `price`, `category`, `sort_order`, `active`) VALUES
-(1, 'Expressz arckezelés', 'Gyors, ápolt és elegáns arckezelés mindennapokra.', 30, 6500.00, 'Manikűr', 1, 1),
-(2, 'Hydra kezelés klasszikus', 'Tartós hidra kezelés fényes, letisztult végeredménnyel.', 45, 8900.00, 'Hydra kezelés', 2, 1),
-(3, 'Francia hidra kezelés', 'Időtálló francia stílus modern kivitelben.', 55, 9900.00, 'Hydra kezelés', 3, 1),
-(4, 'Épített műbőr', 'Tartós épített technika egyedi formára igazítva.', 90, 14900.00, 'Műbőr', 4, 1),
-(5, 'Nail art díszítés', 'Kézzel festett vagy csillámos díszítések egyedi stílusban.', 30, 4500.00, 'Nail Art', 5, 1),
-(6, 'Luxus spa kézápolás', 'Bőrápoló rituálé arckezelésrel és hidratáló pakolással.', 60, 11900.00, 'Prémium', 6, 1);
+(1, 'Expressz arctisztítás', 'Gyors, frissítő arctisztítás ragyogó bőrért.', 30, 6500.00, 'Arckezelés', 1, 1),
+(2, 'Hydra kezelés klasszikus', 'Mélyhidratáló kezelés az üde, sima arcbőrért.', 45, 8900.00, 'Arckezelés', 2, 1),
+(3, 'Bőrfiatalító kezelés', 'Célzott anti-age kezelés feszesebb, üdébb bőrért.', 55, 9900.00, 'Bőrfiatalítás', 3, 1),
+(4, 'Szemöldök formázás', 'Precíz szemöldökigazítás és festés harmonikus archoz.', 45, 7900.00, 'Szemöldök', 4, 1),
+(5, 'Professzionális smink', 'Alkalmi vagy nappali smink személyre szabottan.', 30, 8500.00, 'Smink', 5, 1),
+(6, 'Luxus arckezelés', 'Prémium bőrápoló rituálé masszázzsal és hidratáló pakolással.', 60, 11900.00, 'Prémium', 6, 1);
 
 -- --------------------------------------------------------
 
